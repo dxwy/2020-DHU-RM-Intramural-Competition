@@ -49,6 +49,9 @@
 
 /* USER CODE BEGIN PV */
 
+	uint8_t key;				// 记录按键值
+	uint8_t RX,RY,LX,LY,light;	// 记录遥感模拟值
+	
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,7 +98,10 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-PS2_SetInit();
+	
+	// 初始化PS2
+    PS2_SetInit();
+	
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,7 +109,13 @@ PS2_SetInit();
     while (1)
     {
     /* USER CODE END WHILE */
-
+	    key = PS2_DataKey();
+		RX = PS2_AnologData(PSS_RX);
+		LX = PS2_AnologData(PSS_LX);
+		RY = PS2_AnologData(PSS_RY);
+		LY = PS2_AnologData(PSS_LY);
+		HAL_UART_Transmit(&huart1,&RX,1,10);
+		HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
     }
   /* USER CODE END 3 */

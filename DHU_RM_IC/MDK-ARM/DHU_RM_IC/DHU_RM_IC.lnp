@@ -8,6 +8,7 @@
 "dhu_rm_ic\stm32f1xx_hal_msp.o"
 "dhu_rm_ic\bsp_ps2.o"
 "dhu_rm_ic\bsp_motor.o"
+"dhu_rm_ic\bsp_usart.o"
 "dhu_rm_ic\usb_device.o"
 "dhu_rm_ic\usbd_desc.o"
 "dhu_rm_ic\usbd_cdc_if.o"

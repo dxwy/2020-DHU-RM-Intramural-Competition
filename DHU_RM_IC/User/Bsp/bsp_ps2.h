@@ -1,7 +1,6 @@
 #ifndef  __ps2_H
 #define  __ps2_H
 #include "main.h"
-#include "stm32f1xx_hal.h"
 
 
 /*
@@ -45,6 +44,11 @@
 #define PSS_RY          6       //ÓÒÒ¡¸ËYÖá
 #define PSS_LX          7       //×óÒ¡¸ËXÖá
 #define PSS_LY          8       //×óÒ¡¸ËYÖá
+
+
+extern uint8_t key;
+extern uint8_t RX,RY,LX,LY,light;
+
 
 void PS2_ReadData(void); //¶ÁÊı¾İ
 void PS2_Cmd(uint8_t CMD);//·¢Êı¾İ

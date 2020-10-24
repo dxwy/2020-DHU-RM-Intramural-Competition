@@ -1,5 +1,9 @@
 #include "bsp_ps2.h"
 
+uint8_t key;				// 记录按键值
+uint8_t RX,RY,LX,LY,light;	// 记录遥感模拟值
+
+
 uint16_t Handkey;
 uint8_t Comd[2]= {0x01,0x42};	//开始命令。请求数据（主机发送到手柄）
 uint8_t Data[9]= {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}; //数据存储数组
@@ -242,11 +246,11 @@ void PS2_Vibration(uint8_t motor1,uint8_t motor2)
 
 void delay_us(uint32_t udelay)
 {
-  __IO uint32_t Delay = udelay * 72 / 8;//(SystemCoreClock / 8U / 1000000U)
+    __IO uint32_t Delay = udelay * 72 / 8;//(SystemCoreClock / 8U / 1000000U)
     //见stm32f1xx_hal_rcc.c -- static void RCC_Delay(uint32_t mdelay)
-  do
-  {
-    __NOP();
-  }
-  while (Delay --);
+    do
+    {
+        __NOP();
+    }
+    while (Delay --);
 }
