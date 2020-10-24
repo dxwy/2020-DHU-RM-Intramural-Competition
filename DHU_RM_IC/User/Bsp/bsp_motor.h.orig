@@ -1,0 +1,12 @@
+#ifndef __BSP_MOTOR_H
+#define __BSP_MOTOR_H
+#include "main.h"
+
+#define PS2_PSS_MID_VALUE		128
+#define SPEED_PWM_MAX 			1000
+
+void chassis_remote_control(void);
+	
+
+#endif
+
