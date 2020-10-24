@@ -7,6 +7,11 @@
 
 void motor_move(uint8_t motor_i,int v)
 {
+	if(v>SPEED_PWM_MAX)
+		v= SPEED_PWM_MAX;
+	else if (v<-SPEED_PWM_MAX)
+		v = -SPEED_PWM_MAX;
+	
     switch(motor_i)
     {
     case MOTOR1:
@@ -75,7 +80,7 @@ void chassis_remote_control(void)
     // ps2模拟量映射到pwm
     int x;
     int y;
-
+	int w;
     // 获取PS2数据
     key = PS2_DataKey();
     RX = PS2_AnologData(PSS_RX);
@@ -85,24 +90,25 @@ void chassis_remote_control(void)
 	// 映射成pwm
     x = map(LX,0,255,-1000,1000);
     y = map(LY,0,255,-1000,1000);
+	w = map(RX,0,255,-1000,1000);
     // 解析数据
-    speed[0] = -x-y;
-    speed[1] = -x+y;
-    speed[2] = x-y;
-    speed[3] = x+y;
+    speed[0] = x-y+w;
+    speed[1] = x+y-w;
+    speed[2] = -x-y+w;
+    speed[3] = -x+y-w;
 
     // 输出PWM
     for(uint8_t i=0; i<4; i++)
     {
         motor_move(i,speed[i]);
     }
-
+	printf("key:%d\r\n",key);
     printf("x:%d\r\n",x);
     printf("y:%d\r\n",y);
     printf("s1:%d\r\n",speed[0]);
     printf("s2:%d\r\n",speed[1]);
     printf("s3:%d\r\n",speed[2]);
-    printf("s4:%d\r\n",speed[3]);
+    printf("s4:%d\r\n\r\n",speed[3]);
 }
 
 //输入值分别是：输入值，输入最小值，输入最大值，输出最小值，输出最大值

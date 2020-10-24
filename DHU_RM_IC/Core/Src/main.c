@@ -118,8 +118,7 @@ int main(void)
         /* USER CODE END WHILE */
 		
 		chassis_remote_control();
-        HAL_UART_Transmit(&huart1,&RX,1,10);
-        HAL_Delay(1000);
+        HAL_Delay(100);
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */

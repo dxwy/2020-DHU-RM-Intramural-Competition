@@ -37,7 +37,7 @@
 #define PSB_TRIANGLE    13
 #define PSB_CIRCLE      14
 #define PSB_CROSS       15
-#define PSB_SQUARE      26
+#define PSB_SQUARE      16
 
 /*ƒ£ƒ‚¡ø*/
 #define PSS_RX          5       //”““°∏ÀX÷·
