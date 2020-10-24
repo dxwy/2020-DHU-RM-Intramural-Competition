@@ -242,30 +242,11 @@ void PS2_Vibration(uint8_t motor1,uint8_t motor2)
 
 void delay_us(uint32_t udelay)
 {
-    uint32_t startval,tickn,delays,wait;
-
-    startval = SysTick->VAL;
-    tickn = HAL_GetTick();
-    //sysc = 72000;  //SystemCoreClock / (1000U / uwTickFreq);
-    delays =udelay * 72; //sysc / 1000 * udelay;
-    if(delays > startval)
-    {
-        while(HAL_GetTick() == tickn)
-        {
-
-        }
-        wait = 72000 + startval - delays;
-        while(wait < SysTick->VAL)
-        {
-
-        }
-    }
-    else
-    {
-        wait = startval - delays;
-        while(wait < SysTick->VAL && HAL_GetTick() == tickn)
-        {
-
-        }
-    }
+  __IO uint32_t Delay = udelay * 72 / 8;//(SystemCoreClock / 8U / 1000000U)
+    //¼ûstm32f1xx_hal_rcc.c -- static void RCC_Delay(uint32_t mdelay)
+  do
+  {
+    __NOP();
+  }
+  while (Delay --);
 }

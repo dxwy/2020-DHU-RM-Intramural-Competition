@@ -92,6 +92,14 @@ void Error_Handler(void);
 #define M4A_GPIO_Port GPIOB
 #define M4B_Pin GPIO_PIN_8
 #define M4B_GPIO_Port GPIOA
+#define PS2_DI_Pin GPIO_PIN_4
+#define PS2_DI_GPIO_Port GPIOB
+#define PS2_DO_Pin GPIO_PIN_5
+#define PS2_DO_GPIO_Port GPIOB
+#define PS2_CS_Pin GPIO_PIN_6
+#define PS2_CS_GPIO_Port GPIOB
+#define PS2_CLK_Pin GPIO_PIN_7
+#define PS2_CLK_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

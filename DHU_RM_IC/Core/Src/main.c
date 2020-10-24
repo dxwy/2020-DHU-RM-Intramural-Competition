@@ -20,6 +20,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
 #include "usb_device.h"
 #include "gpio.h"
 
@@ -48,6 +49,9 @@
 
 /* USER CODE BEGIN PV */
 
+	uint8_t key;				// 记录按键值
+	uint8_t RX,RY,LX,LY,light;	// 记录遥感模拟值
+	
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -92,8 +96,12 @@ int main(void)
     MX_TIM2_Init();
     MX_TIM3_Init();
     MX_USB_DEVICE_Init();
+    MX_USART1_UART_Init();
     /* USER CODE BEGIN 2 */
-
+	
+	// 初始化PS2
+    PS2_SetInit();
+	
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -101,10 +109,13 @@ int main(void)
     while (1)
     {
         /* USER CODE END WHILE */
-        HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,GPIO_PIN_RESET);
-		delay_us(500000);
-		HAL_GPIO_WritePin(LED_GPIO_Port,LED_Pin,GPIO_PIN_SET);
-		delay_us(500000);
+		
+		key=PS2_DataKey();
+		RX=PS2_AnologData(PSS_RX);
+		HAL_UART_Transmit(&huart1,&key,1,10);
+		HAL_UART_Transmit(&huart1,&RX,1,10);
+		HAL_Delay(1000);
+		
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */

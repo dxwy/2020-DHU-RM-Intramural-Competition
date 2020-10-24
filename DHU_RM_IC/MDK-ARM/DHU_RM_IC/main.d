@@ -27,10 +27,12 @@ dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h
 dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h
 dhu_rm_ic\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
 dhu_rm_ic\main.o: ../Core/Inc/tim.h
+dhu_rm_ic\main.o: ../Core/Inc/usart.h
 dhu_rm_ic\main.o: ../USB_DEVICE/App/usb_device.h
 dhu_rm_ic\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
 dhu_rm_ic\main.o: ../USB_DEVICE/Target/usbd_conf.h
