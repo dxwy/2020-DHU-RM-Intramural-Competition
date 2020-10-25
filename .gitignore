@@ -17,3 +17,5 @@ JLinkLog.txt
 *.__i
 *.htm
 *.map
+*.lst
+DebugConfig/

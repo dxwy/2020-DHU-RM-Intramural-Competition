@@ -1,2 +1,2 @@
 # 2020-RM-Intramural-Competition
- 2020东华大学校内赛
+ 2020东华大学RoboMaster校内赛
