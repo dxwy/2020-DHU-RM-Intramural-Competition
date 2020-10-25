@@ -76,8 +76,6 @@ void Error_Handler(void);
 #define MOTOR3_GPIO_Port GPIOB
 #define MOTOR4_Pin GPIO_PIN_1
 #define MOTOR4_GPIO_Port GPIOB
-#define M1A_Pin GPIO_PIN_2
-#define M1A_GPIO_Port GPIOB
 #define M1B_Pin GPIO_PIN_10
 #define M1B_GPIO_Port GPIOB
 #define M2A_Pin GPIO_PIN_11
@@ -92,6 +90,8 @@ void Error_Handler(void);
 #define M4A_GPIO_Port GPIOB
 #define M4B_Pin GPIO_PIN_8
 #define M4B_GPIO_Port GPIOA
+#define M1A_Pin GPIO_PIN_3
+#define M1A_GPIO_Port GPIOB
 #define PS2_DI_Pin GPIO_PIN_4
 #define PS2_DI_GPIO_Port GPIOB
 #define PS2_DO_Pin GPIO_PIN_5

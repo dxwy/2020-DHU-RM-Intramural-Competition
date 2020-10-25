@@ -102,13 +102,13 @@ int main(void)
 
     // 初始化PS2
     PS2_SetInit();
-	
-	// 开启TIM3 PWM输出 默认0
-	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_3);
-	HAL_TIM_PWM_Start(&htim3,TIM_CHANNEL_4);
-	
+
+    // 开启TIM3 PWM输出 默认0
+    HAL_TIM_PWM_Start(&M1TIM,TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&M2TIM,TIM_CHANNEL_2);
+    HAL_TIM_PWM_Start(&M3TIM,TIM_CHANNEL_3);
+    HAL_TIM_PWM_Start(&M4TIM,TIM_CHANNEL_4);
+
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -116,9 +116,7 @@ int main(void)
     while (1)
     {
         /* USER CODE END WHILE */
-		
-		chassis_remote_control();
-        HAL_Delay(100);
+        chassis_remote_control();
         /* USER CODE BEGIN 3 */
     }
     /* USER CODE END 3 */
